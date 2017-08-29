@@ -39,3 +39,45 @@ func (this *AnimalFactory) CreateAnimal(name string) Action {
 	}
 }
 ```
+
+## 2. 工厂方法模式
+
+简单工厂模式是通过传递不同的参数生成不同的实例，缺点就是扩展不同的类别时需要修改代码。
+
+工厂方法模式为每一个product提供一个工程类，通过不同工厂创建不同实例。
+
+类图：
+
+![func](http://p0.qhimg.com/t0136c0b7b213d65023.gif)
+
+实现过程：
+
+- 1. 工厂方法定义一个创建struct的接口，让子struct去实现。
+
+```
+type AnimalFactory interface {
+        CreateAnimal() Action
+}
+
+```
+
+- 2. BirdFactory创建一个Bird的实例
+
+```
+type BirdFactory struct {
+}
+
+func (this *BirdFactory) CreateAnimal() Action {
+        return &Bird{}
+}
+
+```
+
+- 3. 工厂方法使用
+
+```
+    bFactory := &BirdFactory{}
+    bird := bFactory.CreateAnimal()
+    bird.Move(100)
+
+```

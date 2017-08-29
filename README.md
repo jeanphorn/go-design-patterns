@@ -14,3 +14,4 @@
 |模式|描述|
 |:--:|:--:|
 |[简单工厂模式](https://github.com/jeanphorn/go-design-patterns/blob/master/creational_patterns/simplefactory.go)|提供一个接口，根据不同的输入生成不同的实例|
+|[工厂方法模式](https://github.com/jeanphorn/go-design-patterns/blob/master/creational_patterns/funcfactory.go)|每个实例都有创建该实例的工厂|
