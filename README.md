@@ -16,3 +16,4 @@
 |[简单工厂模式](https://github.com/jeanphorn/go-design-patterns/blob/master/creational_patterns/simplefactory.go)|提供一个接口，根据不同的输入生成不同的实例|
 |[工厂方法模式](https://github.com/jeanphorn/go-design-patterns/blob/master/creational_patterns/funcfactory.go)|每个实例都有创建该实例的工厂|
 |[建造者模式](https://github.com/jeanphorn/go-design-patterns/blob/master/creational_patterns/builder.go)|将一个复杂的对象与它的表示分离，同样的创造过程可以建造出不停的表示|
+|[单例模式](https://github.com/jeanphorn/go-design-patterns/blob/master/creational_patterns/singleton.go)|在程序运行过程中之产生一个实例|

@@ -157,3 +157,77 @@ func main() {
 
 }
 ```
+
+## 4. 单例模式
+
+单例模式，顾名思义就是在程序的运行中只产生一个实力。在Go实现上也有多种形式。
+
+1. 懒汉模式.
+  这种方式实现起来特别简单，直接判断一个实力是不是为`nil`， 如果是，则新生成；否则返回已有的。但它和多数语言一样，只适合用在单线程。
+
+```
+type SingleTon struct {
+}
+
+var instance *SingleTon
+
+func GetInstance() *SingleTon {
+	if Instance == nil {
+		instance = &SingleTon{}
+	}
+
+	return instance
+}
+```
+
+2. 使用加锁机制
+
+在Go语言中有个基础对象`sync.Mutex`，可以实现协程之间的同步逻辑。
+
+```
+var mu sync.Mutex
+
+func GetInstance() *SingleTon {
+  mu.Lock()
+  defer mu.Unock()
+
+	if Instance == nil {
+		instance = &SingleTon{}
+	}
+
+	return instance
+}
+```
+
+3. `sync.Once`用法
+
+在Go中还有一个更简洁的方法就是使用`sync.Once`，它可以在多协程中起到控制作用。实现起来也非常简单。
+
+```
+var (
+	once     sync.Once
+	instance *SingleTon
+)
+
+func GetInstance(str string) *SingleTon {
+	once.Do(func() {
+		instance = &SingleTon{Attr: str}
+	})
+
+	return instance
+}
+```
+测试代码如下，从运行结果来看，都是一致的。
+
+```
+func main() {
+	for i := 0; i < 10; i++ {
+		go func() {
+			s := GetInstance("test:" + strconv.Itoa(i))
+			s.TestFunc()
+		}()
+	}
+	time.Sleep(1e5)
+}
+
+```
