@@ -17,3 +17,11 @@
 |[工厂方法模式](https://github.com/jeanphorn/go-design-patterns/blob/master/creational_patterns/funcfactory.go)|每个实例都有创建该实例的工厂|
 |[建造者模式](https://github.com/jeanphorn/go-design-patterns/blob/master/creational_patterns/builder.go)|将一个复杂的对象与它的表示分离，同样的创造过程可以建造出不停的表示|
 |[单例模式](https://github.com/jeanphorn/go-design-patterns/blob/master/creational_patterns/singleton.go)|在程序运行过程中之产生一个实例|
+
+## 2.2 结构型模式
+
+结构型模式是将对象或结构体通过一定方式组成一个更复杂的对象或结构体，使其具有更复杂的功能，就像搭积木一样。结构型的模式同通常包括外观模式，桥接模式，适配器模式，装饰模式等。
+
+|模式|描述|
+|:--:|:--:|
+|[外观模](https://github.com/jeanphorn/go-design-patterns/blob/master/structural_patterns/facade.go)|引入子系统统一调用入口|
