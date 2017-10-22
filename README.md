@@ -26,4 +26,4 @@
 |:--:|:--:|
 |[外观模](https://github.com/jeanphorn/go-design-patterns/blob/master/structural_patterns/facade.go)|引入子系统统一调用入口|
 |[装饰模式](https://github.com/jeanphorn/go-design-patterns/blob/master/structural_patterns/decorator.go)|动态扩展已存在对象的功能|
-|[代理模式](https://github.com/jeanphorn/go-design-patterns/blob/master/structural_patterns/proxy.go)|动态扩展已存在对象的功能|
+|[代理模式](https://github.com/jeanphorn/go-design-patterns/blob/master/structural_patterns/proxy.go)|通过一个对象代理其他对象的功能|
