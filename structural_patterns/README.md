@@ -21,3 +21,81 @@
 ![](https://www.packtpub.com/sites/default/files/Article-Images/B05180_01.png)
 
 Go语言实现：
+
+```
+type Facade struct {
+	M Music
+	V Video
+	C Count
+}
+
+func (this *Facade) GetRecommandVideos() error {
+	this.V.GetVideos()
+	this.C.GetCountByID(111)
+
+	return nil
+}
+
+type Music struct {
+}
+
+func (this *Music) GetMusic() error {
+	fmt.Println("get music material")
+	// logic code here
+	return nil
+}
+
+type Video struct {
+	vid int64
+}
+
+func (this *Video) GetVideos() error {
+	fmt.Println("get videos1")
+	return nil
+}
+
+type Count struct {
+	PraiseCnt  int64 //点赞数
+	CommentCnt int64 //评论数
+	CollectCnt int64 //收藏数
+}
+
+func (this *Count) GetCountByID(id int64) (*Count, error) {
+	fmt.Println("get video counts")
+	return this, nil
+}
+
+```
+
+### 2. 装饰模式
+
+装饰模式就是在不改变对象内部结构的情况下，动态扩展它的功能。它提供了灵活的方法来扩展对象的功能。
+
+
+下面是一个简单的实现逻辑,通过Decorate来进一步装饰`Dressing`函数：
+
+```
+type Object func(string) string
+
+func Decorate(fn Object) Object {
+        return func(base string) string {
+
+                    ret := fn(base)
+
+                            ret = ret + " and Tshirt"
+                                    return ret
+                                        }
+}
+
+func Dressing(cloth string) string {
+        return "dressing " + cloth
+}
+
+```
+
+- 使用方式
+
+```
+f := Decorate(Dressing)
+fmt.Println(f("shoes"))
+```
