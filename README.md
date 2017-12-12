@@ -27,3 +27,11 @@
 |[外观模](https://github.com/jeanphorn/go-design-patterns/blob/master/structural_patterns/facade.go)|引入子系统统一调用入口|
 |[装饰模式](https://github.com/jeanphorn/go-design-patterns/blob/master/structural_patterns/decorator.go)|动态扩展已存在对象的功能|
 |[代理模式](https://github.com/jeanphorn/go-design-patterns/blob/master/structural_patterns/proxy.go)|通过一个对象代理其他对象的功能|
+
+## 2.2 行为型模式
+
+行为型模式(Behavioral Pattern)是对在不同的对象之间划分责任和算法的抽象化。行为型模式不仅仅关注类和对象的结构，而且重点关注它们之间的相互作用。
+
+|模式|描述|
+|:--:|:--:|
+|[观察者模式](https://github.com/jeanphorn/go-design-patterns/blob/master/behavioral_patterns/observer.go)|将特定事件发生引起关联的观察者对象更新相关内容|
